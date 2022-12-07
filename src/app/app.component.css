@@ -1,0 +1,13 @@
+
+.app__container{
+    margin: 0 auto 0 auto; 
+    background-color: transparent;
+}
+main{
+    height: 70vh;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar{
+    width: 5px;
+}

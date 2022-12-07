@@ -1,0 +1,141 @@
+
+.list__container{
+    max-width: 1024px;
+    margin: 0 auto 0 auto;
+    padding: 10px 7px;
+}
+.add-btn{
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    z-index: 20;
+    padding: 7px 15px;
+    border-radius: 3px;
+    border: 1.5px solid #fff;
+    background: transparent;
+    color: #fff;
+}
+.todo-list{
+    display: grid;
+    grid-template-columns: 20% 45% 15% 20%;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow:  rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.todo-list:hover{
+    box-shadow: rgba(0, 0, 0, 0.315) 0px 2px 4px, rgba(0, 0, 0, 0.253) 0px 7px 13px -3px;
+}
+.list__container h3{
+    font-size: 20px;
+    text-transform: lowercase !important;
+    line-height: 40px;
+    color: #fff;
+}
+.list__container h3::first-letter{
+    text-transform: capitalize;
+}
+.list__container p{
+    padding: 10px 0;
+    color: #fff;
+    text-transform: lowercase;
+}
+.list__container p::first-letter{
+    text-transform: capitalize;
+}
+.list__container .edit-btn, .list__container .delete-btn{
+    padding: 7px 15px;
+    border-radius: 3px;
+    display: inline-flex;
+    gap: 10px;
+    border: none;
+}
+.list__container .edit-btn:hover, .list__container .delete-btn:hover{
+    cursor: pointer;
+}
+
+.list__container .edit-btn{
+    background: #eee;
+    color: #333;
+}
+.list__container .delete-btn{
+    background: red;
+    color: antiquewhite;
+    margin-left: 15px;
+}
+.status__container{
+    line-height: 35px;
+}
+.status__container label{
+    font-size: 12px;
+    color: #fff;
+}
+/* .status__container input{
+} */
+
+.edit-form{
+    min-width: 250px;
+    position: absolute;
+    top: 25%;
+    left: 40%;
+    z-index: 10;
+    background: #fff;
+    padding: 30px 15px 50px 15px;
+    border-radius: 5px;
+    gap: 20px;
+    box-shadow:  rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.edit-form input{
+    padding: 7px;
+}
+.edit-form-btns{
+    width: 100%;
+    margin-top: 10px;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+
+@media screen and (max-width: 600px){
+    .todo-list{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* Add Form */
+
+.add-item__form{
+    min-width: 250px;
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    z-index: 10;
+    background: #fff;
+    padding: 30px 15px 50px 15px;
+    border-radius: 5px;
+    gap: 20px;
+    box-shadow:  rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;;
+}
+.add-item__form input{
+    padding: 10px;
+}
+
+.add-item__btns{
+    width: 100%;
+    margin-top: 10px;
+    display: inline-flex;
+    justify-content: space-between;
+}
+.add, .cancel{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+}
+.add{
+    background: green;
+    color: #fff;
+}
+.cancel{
+    background: #eee;
+    color: #333;
+}

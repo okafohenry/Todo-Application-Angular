@@ -1,0 +1,67 @@
+<!-- Delete overlay -->
+<div>    
+    <p-toast></p-toast>
+    <p-confirmPopup></p-confirmPopup>   
+</div> 
+
+
+<!-- Add Todo Overlay -->
+<a class="add-btn" (click)="showAddTodoModal()">Add <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+  </svg>
+</a>
+
+<form #addTodo="ngForm" (ngSubmit)="onAddTodo(addTodo.value)" class="add-item__form grid-item" *ngIf="isVisible">
+    <div class="grid-item  gap-5">
+        <label htmlFor="title">Title</label>
+        <input type="text" id="title" name="title" [value]="title" ngModel />
+    </div>
+    <div class="grid-item gap-5">
+        <label htmlFor="description">Description</label>
+        <input type="text" id="description" [value]="description" name="description" ngModel />
+    </div>
+    <div class="add-item__btns">
+        <button class="add" type="submit">Add Item</button>
+        <button class="cancel" (click)="closeAddTodoModal()">Cancel</button>
+    </div>
+</form>
+
+
+
+
+
+<!-- Edit Form -->
+<div *ngFor="let item of items, let idx" class="list__container">
+    <div [id]="idx" class="todo-list">
+        <h3>{{item.title}}</h3>
+        <p>{{item.description}}</p>
+        <div class="status__container">
+            <label [htmlFor]="'completed'">Completed</label>
+            <input [id]="'completed'" [type]="'checkbox'" [checked]="item.completed" (change)="updateTaskStatus($event, item.uid)" />
+        </div>
+        <div>
+            <button class="edit-btn" (click)="onEditTodo(item.uid, item)">Edit</button>
+            <button class="delete-btn" (click)="deleteTodo(item.title, item.uid, $event)">Delete</button>
+        </div>
+    </div>   
+</div> 
+
+
+
+
+<!-- Edit Overlay -->
+<form #editTodo="ngForm" (ngSubmit)="save()" class='edit-form' *ngIf="isEditVisible">
+    <div class="grid-item gap-5">
+        <label>Title</label>
+        <input type="text" name="title" [(ngModel)]="obj.title" ngModel /> 
+    </div><br/>
+    <div class="grid-item gap-5">
+        <label class="desc">Description</label>
+        <input type="text" name="description" [(ngModel)]="obj.description" ngModel />
+    </div>            
+
+    <div class="edit-form-btns">
+        <button type="submit">update</button>
+        <button (click)="close()">cancel</button>
+    </div>
+</form>

@@ -1,0 +1,26 @@
+nav{
+    background: transparent;
+    padding: 20px 50px;
+}
+nav .nav__container{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+nav h2{
+    margin: 0;
+    padding: 0;
+    line-height: 20px;
+    color: #fff;
+}
+/* nav .nav__links .add{
+    padding: 7px 15px;
+    border-radius: 3px;
+    border: 1.5px solid #fff;
+    background: transparent;
+    color: #fff;
+} */
+nav .nav__links .add:hover{
+    cursor: pointer;
+}
